@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="DESCRIPTION META TAG" />
+		<meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>DeepTrace</title>
+		<link rel="icon" type="image/x-icon" href="static/images/favicon.ico" />
+		<link rel="canonical" href="https://deeptrace.io/zh/" />
+
+		<!-- Fonts & Bulma -->
+		<link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
+		<link rel="stylesheet" href="static/css/bulma.min.css" />
+		<link rel="stylesheet" href="static/css/bulma-carousel.min.css" />
+		<link rel="stylesheet" href="static/css/bulma-slider.min.css" />
+		<link rel="stylesheet" href="static/css/fontawesome.all.min.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+		<link rel="stylesheet" href="static/css/index.css" />
+
+		<style>
+			:root {
+				--navbar-height: 3rem;
+
+				/* 深紫方案（加深 Accent） */
+				--color-bg-base: #2a1f3d; /* 深紫背景保持 */
+				--color-bg-card: rgba(255, 255, 255, 0.07);
+				--color-text-main: #f2f1f8;
+				--color-text-secondary: #b0a8c2;
+				--color-accent: #7e22ce; /* 加深为紫水晶深紫 */
+				--color-link: #7e22ce;
+				--color-link-hover: #a855f7; /* 亮一点的紫作为悬停 */
+				--color-button-bg: #7e22ce;
+				--color-button-hover-bg: #5b189f; /* 更深的悬停色 */
+				--color-button-text: #ffffff;
+				--text-linear-gradient: linear-gradient(180deg, #d280ff, #bf46fc 35%, #55a8fe);
+			}
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				height: 100%;
+				font-family: "Noto Sans", sans-serif;
+				color: var(--color-text-main);
+				background: var(--color-bg-base) url(/static/images/bg.svg) center top / cover no-repeat;
+				line-height: 1.6;
+			}
+			a {
+				color: var(--color-accent); /* 将链接字体颜色设置为红色 */
+			}
+			.container-first {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				top: 0;
+				padding-top: var(--navbar-height);
+			}
+
+			.section-box {
+				margin: auto;
+				max-width: 100%;
+				min-height: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				box-shadow: none;
+				padding: 3rem 2rem;
+				background-image: url(/static/images/bg.svg);
+				background-position-y: 50%;
+				background-size: cover;
+				background-repeat: repeat-y;
+				background-attachment: scroll;
+			}
+
+			.section-box h1,
+			.section-box h2 {
+				font-family: "Castoro", serif;
+				color: var(--color-accent);
+				margin: 0.5rem 0;
+			}
+			.section-box h1 {
+				font-size: 3rem;
+				margin-bottom: 1.5rem;
+			}
+			.section-box h2 {
+				font-size: 1.75rem;
+				margin-bottom: 1rem;
+			}
+
+			.section-box .subtitle,
+			.section-box .content {
+				font-family: "Castoro", serif;
+				color: var(--color-text-secondary);
+				margin: 0.5rem 0;
+				font-size: 1rem;
+			}
+
+			.publication-links .button,
+			.button.is-dark {
+				background-color: var(--color-bg-base) !important;
+				color: var(--color-button-text) !important;
+				font-weight: 600;
+				transition: background-color 0.2s, transform 0.1s;
+			}
+			.publication-links .button:hover,
+			.button.is-dark:hover {
+				background-color: var(--color-button-hover-bg) !important;
+				transform: translateY(-1px);
+			}
+			.publication-links .button {
+				margin: 0.5rem 0.3rem;
+			}
+
+			.section-box iframe,
+			.section-box video,
+			.section-box img {
+				width: 100%;
+				max-height: 80%;
+				border-radius: 8px;
+			}
+
+			/* 标题下方间距 */
+			.section-box h1 {
+				margin-bottom: 1.5rem;
+			}
+			.publication-links .button {
+				margin: 0.5rem;
+			}
+
+			nav {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: var(--navbar-height);
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 0 20px;
+				background-color: rgba(42, 31, 61, 0.85);
+				backdrop-filter: blur(8px);
+				box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+				z-index: 1000;
+			}
+			.logo img {
+				height: 40px;
+			}
+			.nav-items {
+				list-style: none;
+				display: flex;
+				margin: 0;
+				padding: 0;
+			}
+			.nav-items li {
+				margin: 0 15px;
+			}
+			.nav-items a {
+				color: var(--color-text-main);
+				font-weight: 500;
+				text-decoration: none;
+				transition: color 0.2s;
+			}
+			.nav-items a:hover {
+				color: var(--color-accent);
+			}
+			.nav-button .button {
+				padding: 8px 12px;
+				background-color: var(--color-bg-base) !important;
+				color: var(--color-button-text) !important;
+				border: none;
+				font-size: 14px;
+				font-weight: 600;
+				cursor: pointer;
+				transition: background-color 0.2s, transform 0.1s;
+			}
+			.nav-button .button:hover {
+				background-color: var(--color-button-hover-bg) !important;
+				transform: translateY(-1px);
+			}
+
+			.text-clip {
+				-webkit-text-fill-color: transparent;
+				background: var(--text-linear-gradient);
+				-webkit-background-clip: text;
+				background-clip: text;
+				display: inline-block;
+				line-height: 1.3;
+			}
+		</style>
+
+		<!-- Scripts -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script defer src="static/js/fontawesome.all.min.js"></script>
+		<script src="static/js/bulma-carousel.min.js"></script>
+		<script src="static/js/bulma-slider.min.js"></script>
+		<script src="static/js/index.js"></script>
+	</head>
+
+	<body>
+		<!-- navigation bar -->
+		<nav>
+			<div class="logo">
+				<a href="#"><img src="static/images/logo.png" alt="Logo" /></a>
+			</div>
+			<ul class="nav-items">
+				<li><a class="navbar-item" href="#abstract">Abstract</a></li>
+				<li><a class="navbar-item" href="#video">Video</a></li>
+				<li><a class="navbar-item" href="#poster">Poster</a></li>
+				<li><a class="navbar-item" href="#BibTeX">BibTeX</a></li>
+			</ul>
+			<div class="nav-button">
+				<a class="button is-flex is-rounded" href="https://github.com/deepflowio/deepflow" target="_blank">
+					<span class="icon">
+						<img src="static/images/github.svg" alt="GitHub Icon" />
+					</span>
+					<span>GitHub</span>
+				</a>
+			</div>
+		</nav>
+
+		<div class="container-first">
+			<!-- Introduction Card -->
+			<div class="section-box" id="introduction">
+				<h1 class="title is-1 text-clip"><strong>DeepTrace</strong></h1>
+				<p></p>
+				<p class="subtitle is-size-5">
+					<a href="#">First Author</a><sup>*</sup>, <a href="#">Second Author</a><sup>*</sup>,
+					<a href="#">Third Author</a>
+				</p>
+				<p></p>
+				<p><strong style="color: #5b189f">Institution Name | Conference Name, Year</strong></p>
+				<p></p>
+				<div class="publication-links mt-4">
+					<a class="button is-normal is-rounded is-dark" href="https://arxiv.org/pdf/<ARXIV_PAPER_ID>.pdf" target="_blank">
+						<span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
+					</a>
+					<a class="button is-normal is-rounded is-dark" href="static/pdfs/supplementary_material.pdf" target="_blank">Supplementary</a>
+					<a class="button is-normal is-rounded is-dark" href="https://github.com/YOUR_REPO_HERE" target="_blank">Code</a>
+					<a class="button is-normal is-rounded is-dark" href="https://arxiv.org/abs/<ARXIV_PAPER_ID>" target="_blank">arXiv</a>
+				</div>
+			</div>
+
+			<!-- Abstract Card -->
+			<div class="section-box" id="abstract">
+				<h2 class="title is-3 text-clip">Abstract</h2>
+				<div class="content has-text-justified">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.</p>
+				</div>
+			</div>
+
+			<!-- Video Presentation Card -->
+			<div class="section-box" id="video">
+				<h2 class="title is-3 text-clip">Video Presentation</h2>
+				<video poster="" autoplay controls muted loop width="100%">
+					<source src="static/videos/banner_video.mp4" type="video/mp4" />
+				</video>
+				<h2 class="subtitle has-text-centered">Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus.</h2>
+			</div>
+
+			<!-- Poster Card -->
+			<div class="section-box" id="poster">
+				<h2 class="title is-3 text-clip">Poster</h2>
+				<iframe src="static/pdfs/sample.pdf" width="100%" height="600"></iframe>
+			</div>
+
+			<!-- BibTeX Card -->
+			<div class="section-box" id="BibTeX">
+				<h2 class="title is-3 text-clip">BibTeX</h2>
+				<pre><code>BibTex Code Here</code></pre>
+			</div>
+		</div>
+	</body>
+</html>
